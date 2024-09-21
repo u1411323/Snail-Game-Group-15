@@ -907,6 +907,7 @@ MonoBehaviour:
   spawnables:
   - {fileID: 1867748021697785272, guid: f77fdbe80ad3c384b88ea57b86b44a46, type: 3}
   - {fileID: 4546803455952420066, guid: ffcc97f83a149f84fbcbc69055b408d2, type: 3}
+  - {fileID: 3977105720689999442, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
   maxHeight: 3.9
   minHeight: -3.9
   cooldown: 0.5
@@ -1035,63 +1036,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 440dc690de4ecb141ba05117f54fbaf8, type: 3}
---- !u!1001 &7175321204874867888
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.99945796
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.024034487
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.00047232935
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.022493746
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 2.752
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.116
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381358465796005765, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -2.581
-      objectReference: {fileID: 0}
-    - target: {fileID: 3977105720689999442, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
-      propertyPath: m_Name
-      value: '[CITYPNG.COM]Real Flame Fire Without Smoke - 1000x1000'
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1104,5 +1048,4 @@ SceneRoots:
   - {fileID: 824875738}
   - {fileID: 333600741}
   - {fileID: 1727840942}
-  - {fileID: 7175321204874867888}
   - {fileID: 196609482}
