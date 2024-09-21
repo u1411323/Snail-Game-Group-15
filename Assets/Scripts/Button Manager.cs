@@ -24,6 +24,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject[] RichGuyButtons;
     //Main Menu button
     [SerializeField] GameObject LoreButton;
+    //Start button
+    [SerializeField] GameObject StartButton;
 
     //# of pages unlocked
     [SerializeField] SaveData saveData;
@@ -31,15 +33,21 @@ public class ButtonManager : MonoBehaviour
     //Big Red X
     [SerializeField] GameObject X;
     private List<GameObject> Xs = new List<GameObject>();
+    bool gameHasStarted = false;
 
 
     public void Start()
     {
-        ResetMenu();
+        gameHasStarted = true;
     }
 
     public void Update()
     {
+        if (gameHasStarted)
+        {
+            ResetMenu();
+            gameHasStarted = false;
+        }
         if (Input.GetKey(KeyCode.Escape))
         {
             ResetMenu();
@@ -52,19 +60,21 @@ public class ButtonManager : MonoBehaviour
         float y;
         int totalUnlocked = saveData.pagesCollected;
         LoreButton.SetActive(true);
+        StartButton.SetActive(true);
         Area1Button.SetActive(false);
         Area2Button.SetActive(false);
         Area3Button.SetActive(false);
         Area4Button.SetActive(false);
         RichGuyButton.SetActive(false);
 
+        //Delete the Xs
         for (int i = 0; i < Xs.Count; i++)
         {
             Destroy(Xs.ElementAt(i));
         }
-
         Xs.Clear();
 
+        //Reset Area 1 Lore
         foreach (GameObject go in Area1Buttons)
         {
             go.SetActive(false);
@@ -79,6 +89,8 @@ public class ButtonManager : MonoBehaviour
             }
            
         }
+
+        //Reset Area 2 Lore
         foreach (GameObject go in Area2Buttons)
         {
             go.SetActive(false);
@@ -93,6 +105,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
+        //Reset Area 3 Lore
         foreach (GameObject go in Area3Buttons)
         {
             go.SetActive(false);
@@ -107,6 +120,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
+        //Reset Area 4 Lore
         foreach (GameObject go in Area4Buttons)
         {
             go.SetActive(false);
@@ -121,6 +135,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
+        //Reset Rich Guy Lore
         foreach (GameObject go in RichGuyButtons)
         {
             go.SetActive(false);
@@ -144,6 +159,7 @@ public class ButtonManager : MonoBehaviour
     public void GivePlayerLoreMenu()
     {
         LoreButton.SetActive(false);
+        StartButton.SetActive(false);
         Area1Button.SetActive(true);
         Area2Button.SetActive(true);
         Area3Button.SetActive(true);
