@@ -12,9 +12,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     //Maximum height player can go.
-    [SerializeField] float maxHeight = 100;
+    [SerializeField] float maxHeight = 3.9f;
     //Minimum height player can go.
-    [SerializeField] float minHeight = 0;
+    [SerializeField] float minHeight = -3.9f;
     //Speed at which player can move up and down.
     [SerializeField] float speed = 1;
 
