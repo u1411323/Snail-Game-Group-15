@@ -9,4 +9,9 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void GivePlayerLoreMenu()
+    {
+        Debug.Log("LORE");
+    }
 }
