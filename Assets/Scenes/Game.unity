@@ -578,6 +578,7 @@ GameObject:
   - component: {fileID: 972322893}
   - component: {fileID: 972322894}
   - component: {fileID: 972322895}
+  - component: {fileID: 972322896}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -742,6 +743,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.199999, y: 25.633375}
   m_EdgeRadius: 0
+--- !u!114 &972322896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972322890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56174403bbc3c454f8afacac06fd31b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 3
+  xPositionAtEachHP:
+  - -5
+  - -3
+  - 0
+  hurtCooldown: 2
 --- !u!1 &1032146180
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - {fileID: 1867748021697785272, guid: f77fdbe80ad3c384b88ea57b86b44a46, type: 3}
+  - {fileID: 4546803455952420066, guid: ffcc97f83a149f84fbcbc69055b408d2, type: 3}
   maxHeight: 3.9
   minHeight: -3.9
   cooldown: 0.5

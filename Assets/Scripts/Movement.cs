@@ -42,9 +42,6 @@ public class Movement : MonoBehaviour
         else
             rb.velocity = new Vector2(0, rb.velocity.y - gravity * Time.deltaTime);
 
-        //Lock the x position where it is desired onscreen. Temporarily set to 0.
-        this.transform.position = new Vector2(0, this.transform.position.y);
-
 
         //Stop player from going above / below the speed limit.
         if (rb.velocity.y > maxUpwardVelocity)

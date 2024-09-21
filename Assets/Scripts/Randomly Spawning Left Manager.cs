@@ -35,7 +35,7 @@ public class RandomlySpawningLeftManager : MonoBehaviour
         timeAtLastFrame = Time.timeAsDouble;
         if (timeAtLastFrame - timeSinceLastSpawn > cooldown && spawnables.Length != 0)
         {
-            lastSpawned = Instantiate(spawnables[0]);
+            lastSpawned = Instantiate(spawnables[1]);
             lastSpawned.transform.position = new Vector2(this.transform.position.x, maxHeight - Random.value * heightRange);
             timeSinceLastSpawn = Time.timeAsDouble;
         }
