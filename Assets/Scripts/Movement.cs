@@ -16,9 +16,9 @@ public class Movement : MonoBehaviour
     //Minimum height player can go.
     [SerializeField] float minHeight = -3.9f;
     //Max upward velocity
-    [SerializeField] float maxUpwardVelocity = 0;
+    [SerializeField] float maxUpwardVelocity = 1;
     //Max falling velocity
-    [SerializeField] float maxDownwardVelocity = 0;
+    [SerializeField] float maxDownwardVelocity = -1;
     //Speed at which player can move up and down.
     [SerializeField] float speed = 1;
     //Gravity on player. 
@@ -44,6 +44,19 @@ public class Movement : MonoBehaviour
 
         //Lock the x position where it is desired onscreen. Temporarily set to 0.
         this.transform.position = new Vector2(0, this.transform.position.y);
+
+
+        //Stop player from going above / below the speed limit.
+        if (rb.velocity.y > maxUpwardVelocity)
+        {
+            rb.velocity = new Vector2(0, maxUpwardVelocity);
+        }
+        if (rb.velocity.y < maxDownwardVelocity)
+        {
+            rb.velocity = new Vector2(0, maxDownwardVelocity);
+        }
+
+
 
         //Stop player from going above / below bounds as stated by min/max height.
         if (gameObject.transform.position.y > maxHeight)
