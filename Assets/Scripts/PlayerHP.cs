@@ -37,6 +37,10 @@ public class PlayerHP : MonoBehaviour
         {
             HP--;
         }
+    if (collision.gameObject.CompareTag("Fire") && HP > 1)
+        {
+            HP=0;
+        }
     }
 
 }
