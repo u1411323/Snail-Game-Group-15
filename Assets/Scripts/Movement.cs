@@ -15,37 +15,46 @@ public class Movement : MonoBehaviour
     [SerializeField] float maxHeight = 3.9f;
     //Minimum height player can go.
     [SerializeField] float minHeight = -3.9f;
+    //Max upward velocity
+    [SerializeField] float maxUpwardVelocity = 0;
+    //Max falling velocity
+    [SerializeField] float maxDownwardVelocity = 0;
     //Speed at which player can move up and down.
     [SerializeField] float speed = 1;
+    //Gravity on player. 
+    [SerializeField] float gravity = 1;
 
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //W key for up, S key for down.
         if (Input.GetKey(KeyCode.W))
-        {
-            this.gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            this.gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - speed * Time.deltaTime);
-        }
+            rb.velocity = new Vector2(0, rb.velocity.y + speed * Time.deltaTime);
+        else if (Input.GetKey(KeyCode.S))
+            rb.velocity = new Vector2(0, rb.velocity.y - gravity * 2 * Time.deltaTime);
+        else
+            rb.velocity = new Vector2(0, rb.velocity.y - gravity * Time.deltaTime);
+
+        //Lock the x position where it is desired onscreen. Temporarily set to 0.
+        this.transform.position = new Vector2(0, this.transform.position.y);
 
         //Stop player from going above / below bounds as stated by min/max height.
         if (gameObject.transform.position.y > maxHeight)
         {
             this.gameObject.transform.position = new Vector2(gameObject.transform.position.x, maxHeight);
+            rb.velocity = new Vector2(0, 0);
         }
         if (gameObject.transform.position.y < minHeight)
         {
             this.gameObject.transform.position = new Vector2(gameObject.transform.position.x, minHeight);
+            rb.velocity = new Vector2(0, 0);
         }
 
     }
