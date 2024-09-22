@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244adf5cbacbcd74a906c9a9c0cf262b, type: 3}
   m_Name: Area3
   m_EditorClassIdentifier: 
-  pagesCollected: 5
+  pagesCollected: 0
