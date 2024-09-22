@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 972322894}
   - component: {fileID: 972322895}
   - component: {fileID: 972322896}
+  - component: {fileID: 972322898}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -982,6 +983,23 @@ MonoBehaviour:
   - 0.125
   milestones: fa000000f4010000e8030000c4090000b80b0000
   scalingIndex: 0
+--- !u!114 &972322898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972322890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18afa30dd7030247a5cca191e419fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAnim: {fileID: 7400000, guid: cd32af2397b837a4d8e76af3211dd85c, type: 2}
+  upAnim: {fileID: 7400000, guid: 8f853d745dea5d04e95d452ff69a5ddd, type: 2}
+  downAnim: {fileID: 7400000, guid: 0e18d7344faba714a9798979fba6d680, type: 2}
+  jumpAnim: {fileID: 7400000, guid: 0d3ec4a7456efc04b8d0ec145db6cde1, type: 2}
+  landAnim: {fileID: 7400000, guid: bccdbc76ca221d24f9e026986166c412, type: 2}
 --- !u!1 &1032146180
 GameObject:
   m_ObjectHideFlags: 0
