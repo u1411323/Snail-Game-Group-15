@@ -374,8 +374,8 @@ public class ButtonManager : MonoBehaviour
         Xs.Clear();
 
         clickedLore.gameObject.SetActive(true);
-        clickedLore.gameObject.transform.position = new Vector2(500, 275);
-        clickedLore.gameObject.transform.localScale = new Vector2(2, 18);
+        clickedLore.gameObject.transform.position = new Vector2(1250, 500);
+        clickedLore.gameObject.transform.localScale = new Vector2(3, 27);
 
 
     }
