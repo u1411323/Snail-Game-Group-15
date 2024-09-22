@@ -42,7 +42,7 @@ public class PlayerHP : MonoBehaviour
         {
             HP = 0;
         }
-        if (HP == 0)
+        if (HP <= 0)
         {
             SceneManager.LoadScene(2); // Lose Screen
         }
