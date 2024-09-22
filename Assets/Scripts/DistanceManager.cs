@@ -33,7 +33,7 @@ public class DistanceManager : MonoBehaviour
         if (second >= scaling[scalingIndex])
         {
             second = 0;
-            distance += 50;
+            distance += 10;
         }
 
         if (distance == milestone)
