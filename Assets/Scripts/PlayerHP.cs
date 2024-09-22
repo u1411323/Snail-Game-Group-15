@@ -54,7 +54,7 @@ public class PlayerHP : MonoBehaviour
         {
             Destroy(collision.gameObject);
             loreCollected++;
-            loreCounter.text = "Documents Collected: " + loreCollected;
+            loreCounter.text = "Lore Collected: " + loreCollected;
         }
     }
 
