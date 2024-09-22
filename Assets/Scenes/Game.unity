@@ -509,7 +509,7 @@ Transform:
   m_GameObject: {fileID: 339345586}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.55, z: 0.6892868}
+  m_LocalPosition: {x: 0, y: -4.55, z: 0.67}
   m_LocalScale: {x: 18, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -856,6 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1032146181}
   - component: {fileID: 1032146182}
+  - component: {fileID: 1032146183}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -893,11 +894,32 @@ MonoBehaviour:
   spawnables:
   - {fileID: 1867748021697785272, guid: f77fdbe80ad3c384b88ea57b86b44a46, type: 3}
   - {fileID: 4546803455952420066, guid: ffcc97f83a149f84fbcbc69055b408d2, type: 3}
-  - {fileID: 3977105720689999442, guid: 4784a205fcbf5b808821aa7702007e2d, type: 3}
   maxHeight: 3.9
   minHeight: -3.9
   cooldown: 1
   distanceManager: {fileID: 1393268813}
+--- !u!114 &1032146183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032146180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896e7f1d1ef983747bc5012998494936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipBackgrounds:
+  - {fileID: 7985550012181558714, guid: 888b72e4fe742ea4aa3d085ab39ec1f1, type: 3}
+  - {fileID: 4297379598448747459, guid: 6067f511d8cea25428326a46b75f5c8a, type: 3}
+  - {fileID: 8297215632065380488, guid: 3840c65c5fa2f75478c4529339d35827, type: 3}
+  BackgroundsTwo: []
+  BackgroundsThree: []
+  BackgroundsFour: []
+  scrollSpeed: 6
+  spawnPostion: {x: 140, y: 0, z: -5}
+  deleteAfterReachedX: -60
 --- !u!1 &1168170653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,12 +1157,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8083080055926469, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
-      propertyPath: xPositionAtEachHP.Array.data[1]
+      propertyPath: xPositionAtEachHP.Array.data[0]
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083080055926469, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
+      propertyPath: xPositionAtEachHP.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083080055926469, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
+      propertyPath: xPositionAtEachHP.Array.data[2]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 759758449854960876, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
       propertyPath: m_Name
       value: Man
+      objectReference: {fileID: 0}
+    - target: {fileID: 759758449854960876, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1497452144135734677, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
       propertyPath: m_Constraints
