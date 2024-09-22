@@ -67,26 +67,21 @@ public class PlayerHP : MonoBehaviour
             if (areaManager.currentZone == 0 && area1.pagesCollected < 6)
             {
                 area1.pagesCollected++;
-                Debug.Log("YAYAYAYAYAYYAY");
             }
             else if (areaManager.currentZone == 1 && area2.pagesCollected < 6)
             {
                 area2.pagesCollected++;
-                Debug.Log("YAYAYAYAYAYYAY");
             }
             else if (areaManager.currentZone == 2 && area3.pagesCollected < 6)
             {
                 area3.pagesCollected++;
-                Debug.Log("YAYAYAYAYAYYAY");
             }
             else if (areaManager.currentZone == 3 && area4.pagesCollected < 6)
             {
                 area4.pagesCollected++;
-                Debug.Log("YAYAYAYAYAYYAY");
             }
             else if (man.pagesCollected < 11){
                 man.pagesCollected++;
-                Debug.Log("YAYAYAYAYAYYAY");
             }
         }
     }
