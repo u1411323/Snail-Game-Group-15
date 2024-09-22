@@ -922,8 +922,14 @@ MonoBehaviour:
   - {fileID: 7985550012181558714, guid: 888b72e4fe742ea4aa3d085ab39ec1f1, type: 3}
   - {fileID: 4297379598448747459, guid: 6067f511d8cea25428326a46b75f5c8a, type: 3}
   - {fileID: 8297215632065380488, guid: 3840c65c5fa2f75478c4529339d35827, type: 3}
-  BackgroundsTwo: []
-  BackgroundsThree: []
+  BackgroundsTwo:
+  - {fileID: 5748656927091118288, guid: 332bedf4399041e4c8c4dd82b4c24274, type: 3}
+  - {fileID: 8979904736981000680, guid: f4c2c6cdb7fbb7d4d96c851efb1ce08c, type: 3}
+  - {fileID: 1719663005405304224, guid: 218d33dff4b4d8048929639308cf0c2e, type: 3}
+  BackgroundsThree:
+  - {fileID: 8347467923903726056, guid: dcf44c86b9d75e942883b101cecd89bc, type: 3}
+  - {fileID: 6600764121766397988, guid: 37da7844d095b484eb7370038bdaad64, type: 3}
+  - {fileID: 4383492393589312008, guid: 388f98e6309cfda48938e40618fbb77a, type: 3}
   BackgroundsFour: []
   timeBetweenAreas: 30
   scrollSpeed: 6
