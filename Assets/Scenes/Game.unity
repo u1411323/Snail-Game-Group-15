@@ -897,8 +897,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - {fileID: 1133802314842751618, guid: dc2422ba8634345408eff3612e6dc7eb, type: 3}
-  - {fileID: 1867748021697785272, guid: f77fdbe80ad3c384b88ea57b86b44a46, type: 3}
+  - {fileID: 7995211928804426479, guid: 0a637ebe7d3eac44a9806e1f0e4c4253, type: 3}
   - {fileID: 4546803455952420066, guid: ffcc97f83a149f84fbcbc69055b408d2, type: 3}
+  - {fileID: 1942649646885661356, guid: a6d336c2dccd47046bd41449c7f8a75b, type: 3}
+  - {fileID: 938750496880029148, guid: f346a639f30ba774d8b893b80fd63a56, type: 3}
   maxHeight: 3.9
   minHeight: -3.9
   cooldown: 1
