@@ -12,6 +12,12 @@ public class AreaManager : MonoBehaviour
     GameObject secondMostRecent;
     GameObject firstMostRecent;
 
+
+    [SerializeField] AudioSource area1Music;
+    [SerializeField] AudioSource area2Music;
+    [SerializeField] AudioSource area3Music;
+    [SerializeField] AudioSource area4Music;
+
     [SerializeField] float timeBetweenAreas;
     float timeSinceAreaChange = 0;
     
@@ -29,12 +35,17 @@ public class AreaManager : MonoBehaviour
         firstMostRecent.transform.position = spawnPostion;
         secondMostRecent = addNewWall();
         timeSinceAreaChange = Time.time;
+
+        area1Music.mute = false;
+        area2Music.mute = true;
+        area3Music.mute = true;
+        area4Music.mute = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         //Check to see if area changes
         if (Time.time - timeSinceAreaChange > timeBetweenAreas)
         {
@@ -70,21 +81,37 @@ public class AreaManager : MonoBehaviour
         {
             temp = Instantiate(shipBackgrounds[(int)(Random.value * shipBackgrounds.Length)]);
             temp.transform.position = new Vector3(firstMostRecent.transform.position.x + 100, firstMostRecent.transform.position.y, firstMostRecent.transform.position.z);
+            area1Music.mute = false;
+            area2Music.mute = true;
+            area3Music.mute = true;
+            area4Music.mute = true;
         }
         else if (currentZone == 1)
         {
             temp = Instantiate(BackgroundsTwo[(int)(Random.value * BackgroundsTwo.Length)]);
             temp.transform.position = new Vector3(firstMostRecent.transform.position.x + 100, firstMostRecent.transform.position.y, firstMostRecent.transform.position.z);
+            area1Music.mute = true;
+            area2Music.mute = false;
+            area3Music.mute = true;
+            area4Music.mute = true;
         }
         else if (currentZone == 2)
         {
             temp = Instantiate(BackgroundsThree[(int)(Random.value * BackgroundsThree.Length)]);
             temp.transform.position = new Vector3(firstMostRecent.transform.position.x + 100, firstMostRecent.transform.position.y, firstMostRecent.transform.position.z);
+            area1Music.mute = true;
+            area2Music.mute = true;
+            area3Music.mute = false;
+            area4Music.mute = true;
         }
         else if (currentZone == 3)
         {
             temp = Instantiate(BackgroundsFour[(int)(Random.value * BackgroundsFour.Length)]);
             temp.transform.position = new Vector3(firstMostRecent.transform.position.x + 100, firstMostRecent.transform.position.y, firstMostRecent.transform.position.z);
+            area1Music.mute = true;
+            area2Music.mute = true;
+            area3Music.mute = true;
+            area4Music.mute = false;
         }
         return temp;
     }
