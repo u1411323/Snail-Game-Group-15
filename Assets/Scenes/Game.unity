@@ -917,8 +917,9 @@ MonoBehaviour:
   BackgroundsTwo: []
   BackgroundsThree: []
   BackgroundsFour: []
+  timeBetweenAreas: 30
   scrollSpeed: 6
-  spawnPostion: {x: 140, y: 0, z: -5}
+  spawnPostion: {x: 40, y: 0, z: -5}
   deleteAfterReachedX: -60
 --- !u!1 &1168170653
 GameObject:

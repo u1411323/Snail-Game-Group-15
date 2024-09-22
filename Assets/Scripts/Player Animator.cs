@@ -32,7 +32,6 @@ public class PlayerAnimator : MonoBehaviour
         if (stateInfo.normalizedTime >= 1f)
         {
 
-            Debug.Log(rb.velocity.y);
             //Walking, walking
             if ((int)(rb.velocity.y * 5) == 0 && velocityLastFrame == 0)
             {
