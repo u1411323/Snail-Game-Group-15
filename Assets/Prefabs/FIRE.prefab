@@ -144,4 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLeft: 0
-  speed: 5
+  speed:
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
