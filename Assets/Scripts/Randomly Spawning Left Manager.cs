@@ -46,7 +46,7 @@ public class RandomlySpawningLeftManager : MonoBehaviour
 
         if (timeAtLastFrame - timeSinceLastSpawn > cooldown * distanceManager.GetDifficultyScalar() && spawnables.Length != 0)
         {
-            int value = (int) Random.Range(1, 3);
+            int value = (int) Random.Range(0, spawnables.Length);
             lastSpawned = Instantiate(spawnables[value]);
 
 
