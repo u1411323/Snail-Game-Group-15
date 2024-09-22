@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,6 +27,18 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject LoreButton = null;
     //Start button
     [SerializeField] GameObject StartButton = null;
+
+    [SerializeField] GameObject QuitButton = null;
+
+    [SerializeField] GameObject CreditsButton = null;
+
+    [SerializeField] GameObject ControlsButton = null;
+
+    [SerializeField] TextMeshProUGUI CreditsText = null;
+
+    [SerializeField] TextMeshProUGUI HowToPlayText = null;
+
+    [SerializeField] GameObject panel = null;
 
     //# of pages unlocked
     [SerializeField] SaveData area1Save = null;
@@ -77,6 +90,9 @@ public class ButtonManager : MonoBehaviour
         int manProgress = manSave.pagesCollected;
         LoreButton.SetActive(true);
         StartButton.SetActive(true);
+        QuitButton.SetActive(true);
+        ControlsButton.SetActive(true);
+        CreditsButton.SetActive(true);
         Area1Button.SetActive(false);
         Area2Button.SetActive(false);
         Area3Button.SetActive(false);
@@ -165,6 +181,11 @@ public class ButtonManager : MonoBehaviour
                 go.GetComponent<ButtonPosition>().unlocked = true;
             }
         }
+
+        //Reset Credits and HTP Menu
+        panel.gameObject.SetActive(false);
+        HowToPlayText.gameObject.SetActive(false);
+        CreditsText.gameObject.SetActive(false);
     }
 
     public void GoToMainGame()
@@ -181,8 +202,15 @@ public class ButtonManager : MonoBehaviour
         //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
         if (SceneManager.GetActiveScene().buildIndex != 0)
             return;
+
+
+        //Reset Credits and HTP Menu
+        CreditsButton.gameObject.SetActive(false);
+        ControlsButton.gameObject.SetActive(false);
+
         LoreButton.SetActive(false);
         StartButton.SetActive(false);
+        QuitButton.SetActive(false);
         Area1Button.SetActive(true);
         Area2Button.SetActive(true);
         Area3Button.SetActive(true);
@@ -350,5 +378,22 @@ public class ButtonManager : MonoBehaviour
         clickedLore.gameObject.transform.localScale = new Vector2(2, 18);
 
 
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void OpenCredits()
+    {
+        panel.gameObject.SetActive(true);
+        CreditsText.gameObject.SetActive(true);
+    }
+
+    public void OpenHTP()
+    {
+        panel.gameObject.SetActive(true);
+        HowToPlayText.gameObject.SetActive(true);
     }
 }
