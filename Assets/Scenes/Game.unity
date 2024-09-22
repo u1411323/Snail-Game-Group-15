@@ -898,7 +898,7 @@ MonoBehaviour:
   spawnables:
   - {fileID: 1133802314842751618, guid: dc2422ba8634345408eff3612e6dc7eb, type: 3}
   - {fileID: 7995211928804426479, guid: 0a637ebe7d3eac44a9806e1f0e4c4253, type: 3}
-  - {fileID: 4546803455952420066, guid: ffcc97f83a149f84fbcbc69055b408d2, type: 3}
+  - {fileID: 7816342543176567021, guid: fc48111cc2b0d1c4f8c6e2012faf9dd4, type: 3}
   - {fileID: 1942649646885661356, guid: a6d336c2dccd47046bd41449c7f8a75b, type: 3}
   - {fileID: 938750496880029148, guid: f346a639f30ba774d8b893b80fd63a56, type: 3}
   maxHeight: 3.9
