@@ -17,11 +17,16 @@ public class PlayerHP : MonoBehaviour
     //The speed at which the player will move between HP points
     [SerializeField] float speedBetweenXPoints = 5;
 
+    [SerializeField] TextMeshProUGUI loreCounter;
+
+    private int loreCollected = 0;
+
     float desiredPositionX = 0;
     // Start is called before the first frame update
     void Start()
     {
         desiredPositionX = xPositionAtEachHP[HP - 1];
+        loreCollected = 0;
     }
 
     // Update is called once per frame
@@ -29,7 +34,6 @@ public class PlayerHP : MonoBehaviour
     {
         if (HP <= xPositionAtEachHP.Length)
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(xPositionAtEachHP[HP - 1], this.gameObject.transform.position.y), speedBetweenXPoints * Time.deltaTime);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +50,17 @@ public class PlayerHP : MonoBehaviour
         {
             SceneManager.LoadScene(2); // Lose Screen
         }
+        if (collision.gameObject.CompareTag("Lore"))
+        {
+            Destroy(collision.gameObject);
+            loreCollected++;
+            loreCounter.text = "Documents Collected: " + loreCollected;
+        }
+    }
+
+    public int GetLoreCollected()
+    {
+        return loreCollected;
     }
 
 }

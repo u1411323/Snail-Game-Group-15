@@ -33,7 +33,7 @@ public class DistanceManager : MonoBehaviour
         if (second >= scaling[scalingIndex])
         {
             second = 0;
-            distance += 10;
+            distance += 100;
         }
 
         if (distance == milestone)
@@ -61,5 +61,10 @@ public class DistanceManager : MonoBehaviour
     public float GetDifficultyScalar()
     {
         return scaling[scalingIndex];
+    }
+
+    public int GetDistance()
+    {
+        return distance;
     }
 }

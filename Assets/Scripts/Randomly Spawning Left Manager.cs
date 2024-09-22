@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 /**
  * This script manages the spawning of objects such as platforms and enemies
@@ -19,6 +20,7 @@ public class RandomlySpawningLeftManager : MonoBehaviour
     [SerializeField] float minHeight = -3.9f;
     [SerializeField] float cooldown = 0.5f;
     [SerializeField] DistanceManager distanceManager;
+    [SerializeField] PlayerHP playerHP;
     double timeAtLastFrame = 0;
     double timeSinceLastSpawn = 0;
     GameObject lastSpawned = null;
@@ -34,11 +36,21 @@ public class RandomlySpawningLeftManager : MonoBehaviour
     void Update()
     {
         timeAtLastFrame = Time.timeAsDouble;
+        if (timeAtLastFrame - timeSinceLastSpawn > cooldown && distanceManager.GetDistance() >= 500 
+            && distanceManager.GetDistance() % 500 == 0 && playerHP.GetLoreCollected() < 30) 
+        {
+            lastSpawned = Instantiate(spawnables[0]);
+            lastSpawned.transform.position = new Vector2(this.transform.position.x, maxHeight - Random.value * heightRange);
+            timeSinceLastSpawn = Time.timeAsDouble;
+        }
+
         if (timeAtLastFrame - timeSinceLastSpawn > cooldown * distanceManager.GetDifficultyScalar() && spawnables.Length != 0)
         {
-            int value = (int)(Random.value * spawnables.Length);
+            int value = (int) Random.Range(1, 3);
             lastSpawned = Instantiate(spawnables[value]);
-            if (value == 0) 
+
+
+            if (value == 1) 
             {
                 lastSpawned.transform.position = new Vector2(this.transform.position.x, (maxHeight - 1.4f) - Random.value * heightRange);
             }
