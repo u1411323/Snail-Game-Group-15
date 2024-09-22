@@ -25,6 +25,7 @@ public class RandomlySpawningLeftManager : MonoBehaviour
     double timeSinceLastSpawn = 0;
     GameObject lastSpawned = null;
     float heightRange = 0;
+    bool spawnedLore = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,17 +37,17 @@ public class RandomlySpawningLeftManager : MonoBehaviour
     void Update()
     {
         timeAtLastFrame = Time.timeAsDouble;
-        if (timeAtLastFrame - timeSinceLastSpawn > cooldown && distanceManager.GetDistance() >= 500 
+        if (distanceManager.GetDistanceIncrease() && distanceManager.GetDistance() >= 500 
             && distanceManager.GetDistance() % 500 == 0 && playerHP.GetLoreCollected() < 30) 
         {
             lastSpawned = Instantiate(spawnables[0]);
             lastSpawned.transform.position = new Vector2(this.transform.position.x, maxHeight - Random.value * heightRange);
-            timeSinceLastSpawn = Time.timeAsDouble;
+            distanceManager.SetDistanceIncrease(false);
         }
 
         if (timeAtLastFrame - timeSinceLastSpawn > cooldown * distanceManager.GetDifficultyScalar() && spawnables.Length != 0)
         {
-            int value = (int) Random.Range(0, spawnables.Length);
+            int value = (int) Random.Range(1, spawnables.Length);
             lastSpawned = Instantiate(spawnables[value]);
 
 

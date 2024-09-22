@@ -15,6 +15,7 @@ public class DistanceManager : MonoBehaviour
     public int scalingIndex;
     private bool scaleChanged;
     private bool milestoneChanged;
+    private bool distanceIncreased = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class DistanceManager : MonoBehaviour
         {
             second = 0;
             distance += 100;
+            distanceIncreased = true;
         }
 
         if (distance == milestone)
@@ -66,5 +68,15 @@ public class DistanceManager : MonoBehaviour
     public int GetDistance()
     {
         return distance;
+    }
+
+    public bool GetDistanceIncrease()
+    {
+        return distanceIncreased;
+    }
+
+    public void SetDistanceIncrease(bool b)
+    {
+        distanceIncreased = b;
     }
 }

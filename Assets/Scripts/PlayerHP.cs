@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class PlayerHP : MonoBehaviour
     //The speed at which the player will move between HP points
     [SerializeField] float speedBetweenXPoints = 5;
 
-
     [SerializeField] SaveData area1;
     [SerializeField] SaveData area2;
     [SerializeField] SaveData area3;
@@ -26,6 +26,10 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] AreaManager areaManager;
 
     [SerializeField] TextMeshProUGUI loreCounter;
+    [SerializeField] Image heart1;
+    [SerializeField] Image heart2;
+    [SerializeField] Image heart3;
+    [SerializeField] Sprite emptyHeart;
 
     private int loreCollected = 0;
 
@@ -53,6 +57,21 @@ public class PlayerHP : MonoBehaviour
         else if (collision.gameObject.CompareTag("Enemy") && HP > 1)
         {
             HP--;
+
+            if (HP == 2)
+            {
+                heart3.sprite = emptyHeart;
+            }
+
+            if (HP == 1)
+            {
+                heart2.sprite = emptyHeart;
+            }
+
+            if (HP == 0)
+            {
+                heart1.sprite = emptyHeart;
+            }
         }
         if (collision.gameObject.CompareTag("Fire") && HP > 1)
         {

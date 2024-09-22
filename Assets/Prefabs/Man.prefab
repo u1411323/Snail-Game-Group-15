@@ -192,6 +192,13 @@ MonoBehaviour:
   - 0
   hurtCooldown: 2
   speedBetweenXPoints: 5
+  area1: {fileID: 0}
+  area2: {fileID: 0}
+  area3: {fileID: 0}
+  area4: {fileID: 0}
+  man: {fileID: 0}
+  areaManager: {fileID: 0}
+  loreCounter: {fileID: 0}
 --- !u!61 &1669434393556778785
 BoxCollider2D:
   m_ObjectHideFlags: 0
