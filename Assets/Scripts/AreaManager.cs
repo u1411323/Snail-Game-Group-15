@@ -9,8 +9,13 @@ public class AreaManager : MonoBehaviour
     [SerializeField] GameObject[] BackgroundsTwo;
     [SerializeField] GameObject[] BackgroundsThree;
     [SerializeField] GameObject[] BackgroundsFour;
+
+    [SerializeField] GameObject[] Backgrounds;
+
     GameObject secondMostRecent;
     GameObject firstMostRecent;
+    GameObject background1;
+    GameObject background2;
 
 
     [SerializeField] AudioSource area1Music;
@@ -36,6 +41,11 @@ public class AreaManager : MonoBehaviour
         secondMostRecent = addNewWall();
         timeSinceAreaChange = Time.time;
 
+        background1 = Instantiate(Backgrounds[0]);
+        background1.transform.position = new Vector3(spawnPostion.x, spawnPostion.y, spawnPostion.z + 0.1f);
+        background2 = Instantiate(Backgrounds[0]);
+        background2.transform.position = new Vector3(spawnPostion.x + 100, spawnPostion.y, spawnPostion.z + 0.1f); ;
+
         area1Music.mute = false;
         area2Music.mute = true;
         area3Music.mute = true;
@@ -45,7 +55,7 @@ public class AreaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(background1.transform.position.z + "HERE");
         //Check to see if area changes
         if (Time.time - timeSinceAreaChange > timeBetweenAreas)
         {
@@ -58,17 +68,30 @@ public class AreaManager : MonoBehaviour
 
         if (secondMostRecent != null)
         {
-            secondMostRecent.transform.position = new Vector2(secondMostRecent.transform.position.x - scrollSpeed * Time.deltaTime, secondMostRecent.transform.position.y);
+            secondMostRecent.transform.position = new Vector3(secondMostRecent.transform.position.x - scrollSpeed * Time.deltaTime, secondMostRecent.transform.position.y, secondMostRecent.transform.position.z);
         }
         if (firstMostRecent != null)
         {
-            firstMostRecent.transform.position = new Vector2(firstMostRecent.transform.position.x - scrollSpeed * Time.deltaTime, firstMostRecent.transform.position.y);
+            firstMostRecent.transform.position = new Vector3(firstMostRecent.transform.position.x - scrollSpeed * Time.deltaTime, firstMostRecent.transform.position.y, firstMostRecent.transform.position.z);
             if (firstMostRecent.transform.position.x < deleteAfterReachedX)
             {
                 Destroy(firstMostRecent);
                 firstMostRecent = secondMostRecent;
                 secondMostRecent = addNewWall();
             }
+        }
+
+        //Move backgrounds
+        background1.transform.position = new Vector3(background1.transform.position.x - scrollSpeed * 1.1f * Time.deltaTime, background1.transform.position.y, spawnPostion.z + 0.1f);
+        background2.transform.position = new Vector3(background2.transform.position.x - scrollSpeed * 1.1f * Time.deltaTime, background2.transform.position.y, spawnPostion.z + 0.1f);
+
+        if (background1.transform.position.x < deleteAfterReachedX)
+        {
+            //Make new Background
+            Destroy(background1);
+            background1 = background2;
+            background2 = Instantiate(Backgrounds[currentZone]);
+            background2.transform.position = new Vector3(background1.transform.position.x + 100, background1.transform.position.y, spawnPostion.z + 0.1f);
         }
     }
 
