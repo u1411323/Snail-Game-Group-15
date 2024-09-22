@@ -19,7 +19,7 @@ public class AreaManager : MonoBehaviour
     [SerializeField] Vector3 spawnPostion;
     [SerializeField] float deleteAfterReachedX;
 
-    private int currentZone = 0;
+    public int currentZone = 0;
 
 
     // Start is called before the first frame update

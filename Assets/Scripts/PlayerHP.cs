@@ -17,6 +17,14 @@ public class PlayerHP : MonoBehaviour
     //The speed at which the player will move between HP points
     [SerializeField] float speedBetweenXPoints = 5;
 
+
+    [SerializeField] SaveData area1;
+    [SerializeField] SaveData area2;
+    [SerializeField] SaveData area3;
+    [SerializeField] SaveData area4;
+    [SerializeField] SaveData man;
+    [SerializeField] AreaManager areaManager;
+
     [SerializeField] TextMeshProUGUI loreCounter;
 
     private int loreCollected = 0;
@@ -55,6 +63,31 @@ public class PlayerHP : MonoBehaviour
             Destroy(collision.gameObject);
             loreCollected++;
             loreCounter.text = "Lore Collected: " + loreCollected;
+
+            if (areaManager.currentZone == 0 && area1.pagesCollected < 6)
+            {
+                area1.pagesCollected++;
+                Debug.Log("YAYAYAYAYAYYAY");
+            }
+            else if (areaManager.currentZone == 1 && area2.pagesCollected < 6)
+            {
+                area2.pagesCollected++;
+                Debug.Log("YAYAYAYAYAYYAY");
+            }
+            else if (areaManager.currentZone == 2 && area3.pagesCollected < 6)
+            {
+                area3.pagesCollected++;
+                Debug.Log("YAYAYAYAYAYYAY");
+            }
+            else if (areaManager.currentZone == 3 && area4.pagesCollected < 6)
+            {
+                area4.pagesCollected++;
+                Debug.Log("YAYAYAYAYAYYAY");
+            }
+            else if (man.pagesCollected < 11){
+                man.pagesCollected++;
+                Debug.Log("YAYAYAYAYAYYAY");
+            }
         }
     }
 
