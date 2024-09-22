@@ -177,6 +177,7 @@ public class ButtonManager : MonoBehaviour
                 go.GetComponent<Button>().enabled = false;
                 GameObject x = Instantiate(X);
                 x.transform.position = go.transform.position;
+                x.transform.parent = this.gameObject.transform.transform;
                 Xs.Add(x);
             }
         }
@@ -197,6 +198,7 @@ public class ButtonManager : MonoBehaviour
                 go.GetComponent<Button>().enabled = false;
                 GameObject x = Instantiate(X);
                 x.transform.position = go.transform.position;
+                x.transform.parent = this.gameObject.transform.transform;
                 Xs.Add(x);
             }
         }
@@ -217,6 +219,7 @@ public class ButtonManager : MonoBehaviour
                 go.GetComponent<Button>().enabled = false;
                 GameObject x = Instantiate(X);
                 x.transform.position = go.transform.position;
+                x.transform.parent = this.gameObject.transform.transform;
                 Xs.Add(x);
             }
         }
@@ -237,6 +240,7 @@ public class ButtonManager : MonoBehaviour
                 go.GetComponent<Button>().enabled = false;
                 GameObject x = Instantiate(X);
                 x.transform.position = go.transform.position;
+                x.transform.parent = this.gameObject.transform.transform;
                 Xs.Add(x);
             }
         }
@@ -257,6 +261,7 @@ public class ButtonManager : MonoBehaviour
                 go.GetComponent<Button>().enabled = false;
                 GameObject x = Instantiate(X);
                 x.transform.position = go.transform.position;
+                x.transform.parent = this.gameObject.transform.transform;
                 Xs.Add(x);
             }
         }
@@ -283,6 +288,13 @@ public class ButtonManager : MonoBehaviour
 
         foreach (GameObject go in RichGuyButtons)
             go.SetActive(false);
+
+        //Delete the Xs
+        for (int i = 0; i < Xs.Count; i++)
+        {
+            Destroy(Xs.ElementAt(i));
+        }
+        Xs.Clear();
 
         clickedLore.gameObject.SetActive(true);
         clickedLore.gameObject.transform.position = new Vector2(500, 275);
