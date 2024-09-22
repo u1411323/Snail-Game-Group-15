@@ -1164,6 +1164,7 @@ MonoBehaviour:
   - {fileID: 3520838703840578630, guid: 5a9c1c232ed95cb4cb5e250a6448df90, type: 3}
   - {fileID: 6613833619955008538, guid: b0f36fc908af68348a6c297118855e2e, type: 3}
   - {fileID: 2733321363923208447, guid: 65674a3d7c7e7a04da43d432b828b308, type: 3}
+  - {fileID: 2733321363923208447, guid: 65674a3d7c7e7a04da43d432b828b308, type: 3}
   area1Music: {fileID: 1500707744}
   area2Music: {fileID: 1750641401}
   area3Music: {fileID: 1952076203}

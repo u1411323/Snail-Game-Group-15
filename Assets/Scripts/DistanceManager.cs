@@ -34,7 +34,7 @@ public class DistanceManager : MonoBehaviour
         if (second >= scaling[scalingIndex])
         {
             second = 0;
-            distance += 100;
+            distance += 10;
             distanceIncreased = true;
         }
 
