@@ -28,7 +28,15 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject StartButton = null;
 
     //# of pages unlocked
-    [SerializeField] SaveData saveData = null;
+    [SerializeField] SaveData area1Save = null;
+    //# of pages unlocked
+    [SerializeField] SaveData area2Save = null;
+    //# of pages unlocked
+    [SerializeField] SaveData area3Save = null;
+    //# of pages unlocked
+    [SerializeField] SaveData area4Save = null;
+    //# of pages unlocked
+    [SerializeField] SaveData manSave = null;
 
     //Big Red X
     [SerializeField] GameObject X;
@@ -62,7 +70,11 @@ public class ButtonManager : MonoBehaviour
 
         float x;
         float y;
-        int totalUnlocked = saveData.pagesCollected;
+        int area1progress = area1Save.pagesCollected;
+        int area2progress = area2Save.pagesCollected;
+        int area3progress = area3Save.pagesCollected;
+        int area4progress = area4Save.pagesCollected;
+        int manProgress = manSave.pagesCollected;
         LoreButton.SetActive(true);
         StartButton.SetActive(true);
         Area1Button.SetActive(false);
@@ -86,9 +98,9 @@ public class ButtonManager : MonoBehaviour
             y = go.GetComponent<ButtonPosition>().y;
             go.transform.position = new Vector2(x, y);
             go.transform.localScale = new Vector2(0.75002f, 8.37f);
-            if (totalUnlocked > 0)
+            if (area1progress > 0)
             {
-                totalUnlocked--;
+                area1progress--;
                 go.GetComponent<ButtonPosition>().unlocked = true;
             }
            
@@ -102,9 +114,9 @@ public class ButtonManager : MonoBehaviour
             y = go.GetComponent<ButtonPosition>().y;
             go.transform.position = new Vector2(x, y);
             go.transform.localScale = new Vector2(0.75002f, 8.37f);
-            if (totalUnlocked > 0)
+            if (area2progress > 0)
             {
-                totalUnlocked--;
+                area2progress--;
                 go.GetComponent<ButtonPosition>().unlocked = true;
             }
         }
@@ -117,9 +129,9 @@ public class ButtonManager : MonoBehaviour
             y = go.GetComponent<ButtonPosition>().y;
             go.transform.position = new Vector2(x, y);
             go.transform.localScale = new Vector2(0.75002f, 8.37f);
-            if (totalUnlocked > 0)
+            if (area3progress > 0)
             {
-                totalUnlocked--;
+                area3progress--;
                 go.GetComponent<ButtonPosition>().unlocked = true;
             }
         }
@@ -132,9 +144,9 @@ public class ButtonManager : MonoBehaviour
             y = go.GetComponent<ButtonPosition>().y;
             go.transform.position = new Vector2(x, y);
             go.transform.localScale = new Vector2(0.75002f, 8.37f);
-            if (totalUnlocked > 0)
+            if (area4progress > 0)
             {
-                totalUnlocked--;
+                area4progress--;
                 go.GetComponent<ButtonPosition>().unlocked = true;
             }
         }
@@ -147,9 +159,9 @@ public class ButtonManager : MonoBehaviour
             y = go.GetComponent<ButtonPosition>().y;
             go.transform.position = new Vector2(x, y);
             go.transform.localScale = new Vector2(0.75002f, 8.37f);
-            if (totalUnlocked > 0)
+            if (manProgress > 0)
             {
-                totalUnlocked--;
+                manProgress--;
                 go.GetComponent<ButtonPosition>().unlocked = true;
             }
         }

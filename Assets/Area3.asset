@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 244adf5cbacbcd74a906c9a9c0cf262b, type: 3}
-  m_Name: SaveData
+  m_Name: Area3
   m_EditorClassIdentifier: 
-  pagesCollected: 3
+  pagesCollected: 5

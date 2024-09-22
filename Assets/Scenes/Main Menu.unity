@@ -2019,7 +2019,11 @@ MonoBehaviour:
   - {fileID: 669430951}
   LoreButton: {fileID: 774864357}
   StartButton: {fileID: 35210204}
-  saveData: {fileID: 11400000, guid: 908a1eee90a1c4f42b10852223cf4b4a, type: 2}
+  area1Save: {fileID: 11400000, guid: 908a1eee90a1c4f42b10852223cf4b4a, type: 2}
+  area2Save: {fileID: 11400000, guid: 3a696285414ed1445aa2d637b1a797bd, type: 2}
+  area3Save: {fileID: 11400000, guid: 63912c6dd000f9748917c57b9fabdc1b, type: 2}
+  area4Save: {fileID: 11400000, guid: 79c9b4a55c50bec49bb6d85f6cafa9f6, type: 2}
+  manSave: {fileID: 11400000, guid: 838dfba815e539c46acceff63031ae8d, type: 2}
   X: {fileID: 8038875872917369319, guid: 1b38eb986e2cd6747813de36860281a7, type: 3}
 --- !u!114 &490211440
 MonoBehaviour:
