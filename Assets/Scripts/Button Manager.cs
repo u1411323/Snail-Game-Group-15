@@ -8,27 +8,27 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     //Area 1 Lore
-    [SerializeField] GameObject Area1Button;
-    [SerializeField] GameObject[] Area1Buttons;
+    [SerializeField] GameObject Area1Button = null;
+    [SerializeField] GameObject[] Area1Buttons = null;
     //Area 2 Lore
-    [SerializeField] GameObject Area2Button;
-    [SerializeField] GameObject[] Area2Buttons;
+    [SerializeField] GameObject Area2Button = null;
+    [SerializeField] GameObject[] Area2Buttons = null;
     //Area 3 Lore
-    [SerializeField] GameObject Area3Button;
-    [SerializeField] GameObject[] Area3Buttons;
+    [SerializeField] GameObject Area3Button = null;
+    [SerializeField] GameObject[] Area3Buttons = null;
     //Area 4 Lore
-    [SerializeField] GameObject Area4Button;
-    [SerializeField] GameObject[] Area4Buttons;
+    [SerializeField] GameObject Area4Button = null;
+    [SerializeField] GameObject[] Area4Buttons = null;
     //Area 5 Lore
-    [SerializeField] GameObject RichGuyButton;
-    [SerializeField] GameObject[] RichGuyButtons;
+    [SerializeField] GameObject RichGuyButton = null;
+    [SerializeField] GameObject[] RichGuyButtons = null;
     //Main Menu button
-    [SerializeField] GameObject LoreButton;
+    [SerializeField] GameObject LoreButton = null;
     //Start button
-    [SerializeField] GameObject StartButton;
+    [SerializeField] GameObject StartButton = null;
 
     //# of pages unlocked
-    [SerializeField] SaveData saveData;
+    [SerializeField] SaveData saveData = null;
 
     //Big Red X
     [SerializeField] GameObject X;
@@ -56,6 +56,10 @@ public class ButtonManager : MonoBehaviour
 
     public void ResetMenu()
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
         float x;
         float y;
         int totalUnlocked = saveData.pagesCollected;
@@ -153,11 +157,18 @@ public class ButtonManager : MonoBehaviour
 
     public void GoToMainGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(1); // Game
+    }
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0); // Main Menu
     }
 
     public void GivePlayerLoreMenu()
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
         LoreButton.SetActive(false);
         StartButton.SetActive(false);
         Area1Button.SetActive(true);
@@ -169,6 +180,10 @@ public class ButtonManager : MonoBehaviour
 
     public void Area1ButtonClicked()
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
         foreach (GameObject go in Area1Buttons) 
         {
             go.SetActive(true);
@@ -190,6 +205,12 @@ public class ButtonManager : MonoBehaviour
 
     public void Area2ButtonClicked()
     {
+
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
+
         foreach (GameObject go in Area2Buttons)
         {
             go.SetActive(true);
@@ -211,6 +232,10 @@ public class ButtonManager : MonoBehaviour
 
     public void Area3ButtonClicked()
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
         foreach (GameObject go in Area3Buttons)
         {
             go.SetActive(true);
@@ -232,6 +257,10 @@ public class ButtonManager : MonoBehaviour
 
     public void Area4ButtonClicked()
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
         foreach (GameObject go in Area4Buttons)
         {
             go.SetActive(true);
@@ -253,6 +282,10 @@ public class ButtonManager : MonoBehaviour
 
     public void RichGuyButtonClicked()
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
         foreach (GameObject go in RichGuyButtons)
         {
             go.SetActive(true);
@@ -274,6 +307,10 @@ public class ButtonManager : MonoBehaviour
 
     public void LoreClicked(Button clickedLore)
     {
+        //Avoid Nullpointer Exceptions if being called somewhere it shouldn't.
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
+
         foreach (GameObject go in Area1Buttons)
             go.SetActive(false);
 

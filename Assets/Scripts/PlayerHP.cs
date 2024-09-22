@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -33,13 +34,17 @@ public class PlayerHP : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && HP > 1)
+        if (collision.gameObject.CompareTag("Enemy") && HP >= 1)
         {
             HP--;
         }
-    if (collision.gameObject.CompareTag("Fire") && HP > 1)
+        if (collision.gameObject.CompareTag("Fire") && HP > 1)
         {
-            HP=0;
+            HP = 0;
+        }
+        if (HP == 0)
+        {
+            SceneManager.LoadScene(2); // Lose Screen
         }
     }
 

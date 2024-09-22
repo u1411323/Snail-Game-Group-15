@@ -34,19 +34,19 @@ public class PlayerAnimator : MonoBehaviour
         //Ascending, walking
         else if ((rb.velocity.y == 0 && velocityLastFrame == 1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
         {
-            animator.Play(landAnim.name);///
+            animator.Play(landAnim.name);///transition
             velocityLastFrame = 0;
         }
         //Descending, walking
         else if ((rb.velocity.y == 0 && velocityLastFrame == -1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
         {
-            animator.Play(landAnim.name);///
+            animator.Play(landAnim.name);///transition
             velocityLastFrame = 0;
         }
         //Walking, ascending
         else if ((rb.velocity.y > 0 && velocityLastFrame == 0) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
         {
-            animator.Play(jumpAnim.name);///
+            animator.Play(jumpAnim.name);///transition
             velocityLastFrame = 1;
         }
         //Ascending, Ascending
