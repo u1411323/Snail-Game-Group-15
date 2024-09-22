@@ -18,6 +18,7 @@ public class RandomlySpawningLeftManager : MonoBehaviour
     [SerializeField] float maxHeight = 3.9f;
     [SerializeField] float minHeight = -3.9f;
     [SerializeField] float cooldown = 0.5f;
+    [SerializeField] DistanceManager distanceManager;
     double timeAtLastFrame = 0;
     double timeSinceLastSpawn = 0;
     GameObject lastSpawned = null;
@@ -33,7 +34,7 @@ public class RandomlySpawningLeftManager : MonoBehaviour
     void Update()
     {
         timeAtLastFrame = Time.timeAsDouble;
-        if (timeAtLastFrame - timeSinceLastSpawn > cooldown && spawnables.Length != 0)
+        if (timeAtLastFrame - timeSinceLastSpawn > cooldown * distanceManager.GetDifficultyScalar() && spawnables.Length != 0)
         {
             int value = (int)(Random.value * spawnables.Length);
             lastSpawned = Instantiate(spawnables[value]);

@@ -57,4 +57,9 @@ public class DistanceManager : MonoBehaviour
 
         distanceText.text = "DISTANCE TRAVELED: " + distance.ToString() +" M";
     }
+
+    public float GetDifficultyScalar()
+    {
+        return scaling[scalingIndex];
+    }
 }

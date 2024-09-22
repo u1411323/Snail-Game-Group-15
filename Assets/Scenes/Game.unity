@@ -813,6 +813,7 @@ MonoBehaviour:
   maxHeight: 3.9
   minHeight: -3.9
   cooldown: 1
+  distanceManager: {fileID: 1393268813}
 --- !u!1 &1168170653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971371698610296438, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 8971371698610296438, guid: 24394e6011615c3468a4d5fdb7f233a9, type: 3}
       propertyPath: m_LocalPosition.z
