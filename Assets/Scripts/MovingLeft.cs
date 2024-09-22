@@ -12,7 +12,7 @@ public class MovingLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject obj = GameObject.Find("Player");
+        GameObject obj = GameObject.Find("Man");
         dm = obj.GetComponent<DistanceManager>();
         speedValue = speed[dm.scalingIndex];
     }
@@ -23,7 +23,6 @@ public class MovingLeft : MonoBehaviour
         if (this.transform.position.x > maxLeft)
         {
             this.transform.position = new Vector2(this.transform.position.x - speedValue * Time.deltaTime, this.transform.position.y);
-            Debug.Log(speedValue);
         }
         else
             Destroy(this.gameObject);

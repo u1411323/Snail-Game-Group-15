@@ -25,59 +25,68 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Walking, walking
-        if ((rb.velocity.y == 0 && velocityLastFrame ==  0) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
+        // Get the current animation state info
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        // Only change animation if the current one has finished (normalizedTime >= 1)
+        if (stateInfo.normalizedTime >= 1f)
         {
-            animator.Play(runAnim.name);
-            velocityLastFrame = 0;
-        }
-        //Ascending, walking
-        else if ((rb.velocity.y == 0 && velocityLastFrame == 1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(landAnim.name);///transition
-            velocityLastFrame = 0;
-        }
-        //Descending, walking
-        else if ((rb.velocity.y == 0 && velocityLastFrame == -1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(landAnim.name);///transition
-            velocityLastFrame = 0;
-        }
-        //Walking, ascending
-        else if ((rb.velocity.y > 0 && velocityLastFrame == 0) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(jumpAnim.name);///transition
-            velocityLastFrame = 1;
-        }
-        //Ascending, Ascending
-        else if ((rb.velocity.y > 0 && velocityLastFrame == 1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(upAnim.name);
-            velocityLastFrame = 1;
-        }
-        //Descending, ascending
-        else if ((rb.velocity.y > 0 && velocityLastFrame == -1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(upAnim.name);
-            velocityLastFrame = 1;
-        }
-        //Walking, descending
-        else if ((rb.velocity.y < 0 && velocityLastFrame == 0) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(downAnim.name);
-            velocityLastFrame = -1;
-        }
-        //Ascending, descending
-        else if ((rb.velocity.y < 0 && velocityLastFrame == 1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(downAnim.name);
-            velocityLastFrame = -1;
-        }
-        //Descending, descending
-        else if ((rb.velocity.y < 0 && velocityLastFrame == -1) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
-        {
-            animator.Play(downAnim.name);
-            velocityLastFrame = -1;
+
+            Debug.Log(rb.velocity.y);
+            //Walking, walking
+            if ((int)(rb.velocity.y * 5) == 0 && velocityLastFrame == 0)
+            {
+                animator.Play(runAnim.name);
+                velocityLastFrame = 0;
+            }
+            //Ascending, walking
+            else if ((int)(rb.velocity.y * 5) == 0 && velocityLastFrame == 1)
+            {
+                animator.Play(landAnim.name);///transition
+                velocityLastFrame = 0;
+            }
+            //Descending, walking
+            else if ((int)(rb.velocity.y * 5) == 0 && velocityLastFrame == -1)
+            {
+                animator.Play(landAnim.name);///transition
+                velocityLastFrame = 0;
+            }
+            //Walking, ascending
+            else if (rb.velocity.y > 0 && velocityLastFrame == 0)
+            {
+                animator.Play(jumpAnim.name);///transition
+                velocityLastFrame = 1;
+            }
+            //Ascending, Ascending
+            else if (rb.velocity.y > 0 && velocityLastFrame == 1)
+            {
+                animator.Play(upAnim.name);
+                velocityLastFrame = 1;
+            }
+            //Descending, ascending
+            else if (rb.velocity.y > 0 && velocityLastFrame == -1)
+            {
+                animator.Play(upAnim.name);
+                velocityLastFrame = 1;
+            }
+            //Walking, descending
+            else if (rb.velocity.y < 0 && velocityLastFrame == 0)
+            {
+                animator.Play(downAnim.name);
+                velocityLastFrame = -1;
+            }
+            //Ascending, descending
+            else if (rb.velocity.y < 0 && velocityLastFrame == 1)
+            {
+                animator.Play(downAnim.name);
+                velocityLastFrame = -1;
+            }
+            //Descending, descending
+            else if (rb.velocity.y < 0 && velocityLastFrame == -1)
+            {
+                animator.Play(downAnim.name);
+                velocityLastFrame = -1;
+            }
         }
     }
 }
