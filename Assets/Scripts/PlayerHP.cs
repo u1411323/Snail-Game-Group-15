@@ -79,7 +79,6 @@ public class PlayerHP : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Lore"))
         {
-            Destroy(collision.gameObject);
             loreCollected++;
             loreCounter.text = "Lore Collected: " + loreCollected;
 
@@ -102,6 +101,7 @@ public class PlayerHP : MonoBehaviour
             else if (man.pagesCollected < 11){
                 man.pagesCollected++;
             }
+            Destroy(collision.gameObject);
         }
     }
 
